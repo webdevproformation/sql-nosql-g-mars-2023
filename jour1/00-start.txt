@@ -1,0 +1,27 @@
+créer sur le bureau de votre ordinateur le dossier "sql-nosql"
+
+lancer une éditeur de texte (Visual Studio Code)
+File > Open folder > sélectionner le dossier "sql-nosql"
+
+créer un sous dossier "jour1"
+
+=> vendredi (après midi) => éval exo 
+=> objectif c'est de savoir si c'est Acquis / Non Acquis
+
+-------------------
+
+Malik HARRIZ
+malik.h@webdevpro.net 
+SQL et NoSQL 
+
+-------------------
+
+support de cours :
+url : https://formation.webdevpro.net/sql-nosql/ (pas dans google directement dans l'url)
+login : sql 
+password : nosql 
+(en minuscules)
+
+
+
+

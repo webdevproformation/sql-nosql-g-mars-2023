@@ -1,0 +1,101 @@
+traitements et les données 
+
+=> le coeur du système (les données)
+
+=> dans les années 70 => fichier 
+
+=> CRUD (Create / Read / Update / Delete)
+
+=> IBM => Codd (base de données relationnelles)
+mathématiques => algèbre relationnelle
+
+Comment stocker des informations ? 
+=> le moins de place possible 
+=> cohérente 
+
+=> les concepts que vous voulez stocker ? Entités (TABLE)
+
+=> TABLE => Utilisateur / réservation / salle de réunion 
+=> clé primaire => colonne technique qui permet de récupérer facilement un enregistrement / n uplet dans la table 
+
+=> clé secondaire => colonne qui permet de faire une relation avec une autre table 
+
+=> cette manière de stocker des données / organiser / de les modéliser est LA MANIERE la plus utilisée jusqu'à aujourd'hui 
+
+=> SBGD => Système de Gestion de Base de Données 
+
+=> vos informations / logiciel qui permet de réaliser tous les traitements sur les données 
+
+const etudiant = {
+    nom : "Alain"
+    age : 22
+}
+
+vous , pour réaliser CRUD sur ces données => vous alles faire des demandes (requête / query ) au logiciel 
+
+pour réaliser la demande => utiliser un langage spécifique 
+SQL => Structured Query Langage 
+
+Le langage de référence 
+
+=> comprenez bien le langage SQL  => relationnel / non relationnelle 
+
+Base de données relationnelles =>
+
+base de données avec Licence 
+base de données sans Licence et open source 
+
+-----------------------
+
+Terminologie 
+
+Base de données 
+Table / Entités 
+Column     => Schéma 
+Enregistrement 
+
+=> clé primaire / clé secondaire / relation 
+
+=> Toutes les bases de données relationnels => stockées sur le disque 
+
+=> base de données relationnelles => stockées => 1 seule machine 
+
+=> Giga / Tera Octet de données 
+=> si vous avez moins de 1000 requêtes / secondes 
+
+=> Propriétés ACID
+Atomicité 
+=> si vous réalisez demande / requête exécutée à 100% / annulé à 100%
+
+Cohérence 
+=> si vous réaliser une transaction elle doit vérifier les contraintes d'intégrité de la base  
+
+Isolation 
+=> chaque demande / query est traitée dans un certaine ordre de manière isolée 
+
+Durabilité 
+=> une fois que l'opération est finalisée 
+=> stockée sur disque dur et on doit pouvoir récupérer les données même en cas de panne 
+
+
+
+relationnel => TABLE  (mariadb)
+
+INSERT INTO etudiant () VALUES (..)
+SELECT 
+UPDATE 
+DELETE 
+
+non relationnel => collection / clé (MongoDB)
+Javascript / Java 
+db.etudiants.insert({})
+db.etudiants.update()
+db.etudiants.delete()
+
+
+
+
+
+
+
+
