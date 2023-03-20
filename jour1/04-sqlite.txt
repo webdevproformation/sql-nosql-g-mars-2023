@@ -124,5 +124,30 @@ exo 1 , 20 , "minutes" , vrai
 exo2 , 15 , "heures , faux 
 exo final , 50 , secondes , vrai 
 
+touch fichier.sqlite 
+vi fichier.sqlite => une fois que le fichier est créé ne pas écrire dans le fichier avec vi par exemple 
+il FAUT laisser le shell sqlite3 écrire dans le fichier 
+
+Parse error: file is not a database (26)
 
 
+restaure
+sqlite3 toto.sqlite  < requete.sql
+
+back up 
+sqlite3 toto.sqlite .dump > blackup-toto.sql
+
+préparation pour migration vers une autre machine 
+cp blackup-toto.sql blackup-toto.prod.sql
+sed -i 's/localhost:3000/mon-domain.com/g' blackup-toto.prod.sql
+
+
+CREATE TABLE IF NOT EXISTS exo1 (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT ,
+    sujet VARCHAR(255)
+);
+
+INSERT INTO exo1
+( sujet , duree, unite , status )
+VALUES
+(  )
