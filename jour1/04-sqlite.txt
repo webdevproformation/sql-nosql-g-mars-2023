@@ -47,6 +47,34 @@ CREATE TABLE IF NOT EXISTS user (
     status BOOLEAN
 );
 
+// vous pouvez écrire les requêtes SQL intégralement en minuscule ou en majuscule => il est conseillé mais pas obligatoire de mettre mot clé de SQL en MAJUSCULE et les colonnes / nom table en minuscule 
+create table if not exists toto()
+
+// attention pour la dernière colonne pas de , 
+// ajouter une nouvelle ligne dans la table user 
+// 
+INSERT INTO user  -- dans quel table 
+( nom , age , status )  -- sur quelle colonne 
+                       -- pour la clé primaire on ne met pas la colonne 
+                       -- on laisse à SQlite la valeur à mettre 
+                       -- qui a un compteur interne qui connait le numéro de ligne à ajouter 
+VALUES                 -- quelles valeurs 
+("Alain" , 22 , TRUE ); -- les valeurs à insérer 
+                       -- l'ordre des valeurs doit respecter l'ordre des colonnes
+                       -- dans la première paire de parenthèses
+
+INSERT INTO user
+( nom , age , status )
+VALUES
+("Alain" , 22 , TRUE );
+
+-- vous pouvez ajouter plusieurs lignes simultanément
 
 
+INSERT INTO user 
+(nom , age , status)
+VALUES 
+("Benoit" , 40 , FALSE) ,
+("Céline" , 12 , TRUE) ;
 
+-- espace et les sauts de lignes dans les () sont facultatifs (aérer le code)
