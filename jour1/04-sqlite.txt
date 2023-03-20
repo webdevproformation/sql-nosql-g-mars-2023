@@ -141,13 +141,86 @@ préparation pour migration vers une autre machine
 cp blackup-toto.sql blackup-toto.prod.sql
 sed -i 's/localhost:3000/mon-domain.com/g' blackup-toto.prod.sql
 
+--------------
+
+correction
 
 CREATE TABLE IF NOT EXISTS exo1 (
     id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT ,
-    sujet VARCHAR(255)
+    sujet VARCHAR(255) ,
+    duree INT ,
+    unite VARCHAR(10),
+    status BOOLEAN 
 );
 
 INSERT INTO exo1
 ( sujet , duree, unite , status )
 VALUES
-(  )
+( "exo 1 ", 20 , "minutes" , TRUE  ),
+("exo2" , 15 , "heures" , FALSE ),
+("exo final" , 50 , "secondes" , FALSE  );
+
+touch correction.sql
+vi correction.sql
+copier et coller le fichier correction.sql 
+:wq!
+
+ sqlite3 demo.sqlite < correction.sql
+
+ SELECT *  FROM exo1 ; 
+
+
+=> sur sqlite si j'ai besoin d'avoir l'ensemble des tables disponibles dans ma base :
+
+SELECT * FROM sqlite_master WHERE type='table'
+exo1
+user 
+
+créer une autre table 
+vehicule contient 2 colonnes id clé primaire / marque 
+
+CREATE TABLE IF NOT EXISTS vehicule (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT ,
+    marque VARCHAR(255)
+);
+
+INSERT INTO vehicule 
+(marque) 
+VALUES 
+("BMW"),
+("Peugeot") ;
+
+SELECT * FROM user ; 
+
+=> Céline a une BMW 
+=> Alain a une Peugeot
+
+// clé primaire => permet de distinguer une ligne dans une table 
+                // un enregistrement dans une table / profil user 
+
+// clé secondaire / clé étrangère 
+                 => permet de faire référence à une ligne d'une AUTRE table 
+
+utilisateur 1 utilise le véhicule 2 
+
+CREATE TABLE profil (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT ,
+    nom VARCHAR(255) ,
+    vehicule_id INTEGER ,
+    FOREIGN KEY (vehicule_id) REFERENCES  vehicule (id)
+); 
+INSERT INTO profil 
+(nom , vehicule_id)
+VALUES 
+("Alain", 2),
+("Céline", 1) ;
+
+SELECT * 
+FROM profil 
+JOIN vehicule 
+ON profil.vehicule_id = vehicule.id ;
+
+
+
+
+
