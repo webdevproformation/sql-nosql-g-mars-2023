@@ -28,3 +28,25 @@ cd /home/test
 touch demo.sqlite
 # lance le binaire sqlite3 le fichier créé 
 sqlite3 demo.sqlite
+
+// créer un table user 
+// 4 colonnes 
+// id clé primaire 
+// nom text avec un maximum de 255 lettres 
+// age chiffre entier 
+// status Boolean 
+
+// user écrit en minuscule => variable
+// CREATE TABLE IF NOT EXISTS => en majuscule car ce sont des mots clé du langage SQL 
+// toutes les sql doivent se finir le symbole ; 
+
+CREATE TABLE IF NOT EXISTS user (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    nom VARCHAR(255),
+    age INT ,
+    status BOOLEAN
+);
+
+
+
+
