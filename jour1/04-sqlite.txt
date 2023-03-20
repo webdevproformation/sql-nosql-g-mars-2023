@@ -78,3 +78,34 @@ VALUES
 ("Céline" , 12 , TRUE) ;
 
 -- espace et les sauts de lignes dans les () sont facultatifs (aérer le code)
+
+récupérer toutes les valeurs stockées dans la table user quelquesoit la colonne
+
+SELECT * FROM user ;
+
+1|Alain|22|1
+2|Benoit|40|0
+3|Céline|12|1
+
+CRUD 
+Create INSERT INTO 
+Read SELECT 
+Update UPDATE 
+
+UPDATE user SET age = 13 WHERE id = 3 ; 
+// filtrer l'update via la clé primaire => sur à 100% de mettre à jour le bon profil user
+UPDATE user SET age = 13 WHERE nom = "Céline" ; 
+// filtre via une autre colonne que l'id (clé primaire ) => il se peut que il ait plusieurs lignes qui soient modifiées car on peut avoir deux utilisateurs qui s'appellent Céline 
+
+1|Alain|22|1
+2|Benoit|40|0
+3|Céline|13|1
+
+base de données relationnelle => TABLE / Colonne / ligne 
+
+supprimer une ligne dans la table user 
+
+DELETE FROM user WHERE id = 2 ; 
+
+1|Alain|22|1
+3|Céline|13|1
