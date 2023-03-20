@@ -209,6 +209,7 @@ CREATE TABLE profil (
     vehicule_id INTEGER ,
     FOREIGN KEY (vehicule_id) REFERENCES  vehicule (id)
 ); 
+
 INSERT INTO profil 
 (nom , vehicule_id)
 VALUES 
