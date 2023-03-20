@@ -1,0 +1,35 @@
+Télécharger l'ISO de alpine linux => x86_64 
+
+=> lancer Virtual Box 
+=> Bouton Nouvelle 
+=> nom => alpine-sqlite
+=> ISO Image => Sélectionner 
+
+
+-------------
+-------------
+
+base de données relationnelle => SQLITE 
+
+=> setup-alpine 
+
+=> fr
+=> fr-azerty
+=> host : alp-sqlite
+=> [eth0]
+=> 192.168.1.125
+=> root
+=> Europe
+=> Paris
+=> proxy [none]
+=> q
+=> [1]
+=> malik
+=> malik
+=> root
+=> clé ssh sur le compte malik [none]
+=> [openssh]
+=> sda
+=> sys
+=> y
+=> reboot 
