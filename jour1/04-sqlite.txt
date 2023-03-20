@@ -1,0 +1,30 @@
+base de données relationnelle 
+
+=> léger 
+=> à part installé le logiciel sqlite3 
+
+
+ssh malik@192.168.1.125
+root 
+
+// mettre en root sur la machine
+=> su 
+=> root 
+
+# ajouter des repo en +
+vi /etc/apk/repositories
+
+décommenter la ligne http://dl-cdn.alpinelinux.org/alpine/v3.17/community
+esc :wq! Enter
+# mis à jour la liste de repo en local
+apk update
+# Télécharger le binaire sqlite
+apk add sqlite
+
+# créer un dossier test dans homet et positinné dessus
+mkdir -p /home/test
+cd /home/test
+# créer un fichier demo.sqlite => extension que vous voulez 
+touch demo.sqlite
+# lance le binaire sqlite3 le fichier créé 
+sqlite3 demo.sqlite
