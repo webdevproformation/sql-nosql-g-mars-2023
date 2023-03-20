@@ -1,0 +1,125 @@
+à partir des années 2000 => explosion d'internet au quotidien
+
+=> Google / facebook / yahoo 
+
+=> avec les bases de données relationnelles => ils n'arrivent à supporter la charge de travail (serveur)
+
+=> trop lent 
+
+=> 1ère idée => grossir les serveur serveurs
+=> 2ème idée => dupliquer les serveurs 
+
+=> ils se mettent à repenser leurs manières stocker / données des données 
+
+=> ACID => essayer de réduire les contraites du modèle ACID 
+
+=> 2009 => Johan Oskarsson  => organisation une conférence sur une présentation sur ces nouvelles bases données 
+
+=> noSql => 
+
+=> Not Only SQL => MAIS utilise plus ou moins le langage le SQL 
+
+=> Dans les bases de données NoSQL il existe 4 sous genres :
+
+- NoSQL orientés clé / valeur (Redis)
+plus de relation / plus de table 
+clé Alain : 1
+clé Alain : { nom : "DOE" , age : 22 , adresse : "55 rue de Paris "  }
+
+plus dans le disque dur => RAM 
+TTL => Time To Live 
+
+const nom = "Alain"
+const age = 22
+const isAdmin = true 
+
+const etudiant = { //objet => collection / document 
+    nom : "Alain",
+    age : 22,
+    isAdmin : true 
+}
+
+-----------------------
+
+NoSQl => Orienté Document => MongoDB 
+
+disque dur 
+requête avancée recherche / agregation / ... 
+clé => document 
+clé primaire 
+jointure 
+{
+    id : 1 ,
+    total : 2000
+}, {
+    id : 2 ,
+    total : 5000,
+    client : "Alain"
+}
+
+fonction de hashage (MD5 / SHA1)
+
+Alain => MD5("Alain") => 123456
+UNMD5("123456") => "ALain" => (n'existe pas )
+
+Benoit => MD5("Benoit") => 123457 (même nombre de caractère)
+
+si je donne deux string différents à la fonction de hashage => je dois avoir deux résultats différents (collision)
+
+---------------
+
+dezoinufgziyduyetz
+
+MD5("dezoinufgziyduyetz")
+MD5("12346")
+MD5("12346")
+
+---------------
+hasher
+chiffrer => déchiffrer
+crypter / décrypter  
+
+---------------
+
+NoSQL orientée Column 
+
+TABLE => colonne (propriété attribut de la table)
+id nom age isAdmin 
+1  Alain 22 true
+2  Benoit 34 false 
+
+clé primaire 
+
+- la clé primaire => Partition Key comment répartir les données sur des serveurs 
+- il n'est pas possible de faire des recherches (WHERE) sur une autre colonne QUE la clé répartition (ici id)
+message d'erreur si vous réalisez une recherche sur une autre colonne 
+
+- concept de jointure est supprimé 
+- créer les tables en fonction de requête que l'on va réaliser 
+=> dénormaliser la manière de créer des tables 
+=> dupliquer des données 
+
+id nom age isAdmin  téléphone 
+1  Alain 22 true    { 0101 , 0202  }
+2  Benoit 34 null   { 0203 }
+
+Cassandra DB 
+
+
+{
+    nom :
+    age 
+    id 
+    lien vers = [id,id,id]
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -22,6 +22,9 @@ login : sql
 password : nosql 
 (en minuscules)
 
+------------------
 
+toutes les notes de cours :
 
+https://github.com/webdevproformation/sql-nosql-g-mars-2023
 
