@@ -1,0 +1,46 @@
+MySQL et MariaDB 
+
+=> ça vient du même projet 
+
+MySQL => SunMicroSystem => Oracle
+
+=> Fork => MariaDB du nom de la fille du fondateur du projet MySQL Monty Wildenius 
+
+MariaDB / MySQL 
+
+Linux => MariaDB
+
+MAMP => MySQL 
+
+---------------------------------
+
+Lancer la machine virtuelle => alpine-sqlite 
+
+se connecter avec le compte root 
+
+ip a => 192.168.1.125
+
+Lancer un autre terminal dans votre système 
+pour se connecter en ssh à la machine 
+
+ssh malik@192.168.1.125
+root 
+
+su 
+root
+
+sqlite => sqlite base de relationnelle en local 
+MariaDB => base de données relationnelle client / serveur 
+
+=> on accessible DANS les applications dans la machine
+et HORS de la machine 
+
+-----------------
+=> même si vous mysql => mariadb qui est installée
+
+apk add mysql mysql-client 
+apk del <package>
+
+=> Wordpress / Magento / Joomla / SPIP 
+
+
