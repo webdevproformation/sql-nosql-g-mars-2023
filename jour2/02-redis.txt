@@ -72,5 +72,48 @@ netstat -putan
 
  127.0.0.1:6379
 
+redis-cli 
+auth default foobared 
 
-// 
+SET cle valeur
+GET cle 
+
+SET chiffreEntier 10
+INCR chiffreEntier
+DECR chiffreEntier
+
+MSET 
+
+stocker des tableaux 
+
+// liste [ "pomme" , "poire", "pomme" ]
+// set   [ "pomme" , "poire" ]
+// set ordonnés [ 
+     { "banane" , 0 }
+     { "pomme" , 10 }
+     { "poire" , 20 }
+ ]
+// Hash 
+// {
+    nom : Alain 
+    age : 22
+    adresse : 20 rue de Paris
+}
+
+RPUSH ajouter une valeur à droite de votre liste 
+LPUSH ajouter une valeur au début de la liste 
+
+RPUSH fruits pomme ajouté à droite (right)
+LPUSH fruits ananas ajouté à gauche (left)
+LLEN fruits 
+RPOP supprimer à droite 
+LPOP  supprimer au début de la liste 
+LINSERT 
+
+HSET etudiant:objet nom Alain
+HSET etudiant:objet age 22
+HGET 
+
+HGETALL etudiant:objet
+
+HMSET etudiant:objet adresse "75 rue de Paris" ville Marseille cp 13000
