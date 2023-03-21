@@ -43,4 +43,69 @@ apk del <package>
 
 => Wordpress / Magento / Joomla / SPIP 
 
+-----------------
+
+/etc/init.d/mariadb setup 
+
+ '/var/lib/mysql' => dans ce dossier que l'on va trouver les fichiers qui stockent les données 
+ mariadb => il faut disposer d'une compte user pour accéder aux bases de données 
+ root => dans mariadb 
+ mysql => mariadb 
+
+/etc/init.d/mariadb restart && rc-update add mariadb default
+rc-service mariadb restart && rc-update add mariadb default 
+
+rc-service mariadb restart => démarrer le service (démarrer mariadb)
+rc-update mariadb default  => permet de inscrire mariadb comme service à lancer par défaut lorsque la machine démarre 
+
+rc-update show
+
+
+debian apt install <package>
+alpine apk add <package>
+
+-----------------------------
+
+/usr/bin/mysqladmin -u root password 'password'
+
+mysql_secure_installation
+
+Enter current password for root (enter for none): rien 
+Switch to unix_socket authentication [Y/n] : n
+Change the root password? [Y/n] Y
+New password: root
+Re-enter new password: root
+Remove anonymous users? [Y/n] n
+Disallow root login remotely? [Y/n] n
+Remove test database and access to it? [Y/n] Y
+Reload privilege tables now? [Y/n] Y
+
+le client en ligne de commande de mysql 
+mysql -uroot -p 
+root 
+
+SHOW DATABASES ; // connaitre la liste de toutes les bases de données 
+// disponible dans votre serveur de base de données 
+
+CREATE DATABASE demo ; // créer une bdd relationnelle
+
+USE demo ; // se positionner dessus
+
+// créer une table 
+CREATE TABLE etudiants (  
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(255)
+); 
+
+https://formation.webdevpro.net/sql 
+login sql 
+password sql
+
+phpMyAdmin 
+
+---------------------------
+
+pour télécharger mysql (le vrai)
+
+wget https://dev.mysql.com/downloads/file/?id=516467
 

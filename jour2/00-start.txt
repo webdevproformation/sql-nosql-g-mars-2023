@@ -9,3 +9,10 @@ password : nosql
 toutes les notes de cours :
 
 https://github.com/webdevproformation/sql-nosql-g-mars-2023
+
+
+support 
+
+https://formation.webdevpro.net/sql 
+login sql 
+password sql
