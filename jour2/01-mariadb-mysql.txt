@@ -184,6 +184,44 @@ chmod -R 777 index.php
 reprise après midi !
 
 
+back up faire une copie d'une base de données et de ses enregistrements hors de la base 
+
+sqlite3 fichier.sqlite .dump > /tmp/fichier.sql 
+
+mysqldump -uroot -p"root" demo > /tmp/demo.sql 
+
+mysqldump binaire de création du back up 
+-uroot sans espace => login 
+-p"root" sans espace => mot de passe 
+demo la base à back up
+
+> où stocker le flux de texte généré 
+
+/tmp/demo.sql où stocker les données 
+
+https://phoenixnap.com/kb/vim-color-schemes
+
+accéder à mariadb depuis une machine externe 
+
+vi /etc/my.cnf.d/mariadb-server.cnf
+commenter la directive suivante : #skip-networking
+
+décommenter cette ligne : 
+bind-address=0.0.0.0
+
+----
+
+rc-service mariadb restart
+
+----
+
+CREATE USER 'titi'@'%' IDENTIFIED BY 'toto';
+GRANT ALL PRIVILEGES ON *.* TO 'titi'@'%' WITH GRANT OPTION;
+flush privileges;
+
+mysql -h 192.168.1.125 -utiti -p
+
+
 
 
 
