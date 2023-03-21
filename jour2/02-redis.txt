@@ -54,9 +54,23 @@ google.fr => 8.8.8.8
 
 ajouter 
 bind 0.0.0.0
+commenter la ligne #bind 127.0.0.1 -::1
+
+remplacer yes par no 
+protected-mode yes // remplacer par  protected-mode no
+
+décommenter la ligne suivante :
+/foobared
+
+requiredpass foobared
+
 :wq!
 
 rc-service redis restart
 
 netstat -putan
 
+ 127.0.0.1:6379
+
+
+// 
