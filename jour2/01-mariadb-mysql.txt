@@ -134,6 +134,54 @@ rm phpMyAdmin-5.2.1-all-languages.tar.gz  // supprimer l'archive
 mv phpMyAdmin-5.2.1-all-languages phpmyadmin
 
 
+chmod -R 777 /usr/share/webapps/
+
+ln -s /usr/share/webapps/phpmyadmin/ /var/www/localhost/htdocs/phpmyadmin
+
+http://192.168.1.125/phpmyadmin
+lighttpd => /var/www/localhost/htdocs/phpmyadmin
+
+
+----------------------------------
+
+vi /etc/apk/repositories
+tout décommenter 
+apk update 
+
+télécharger php et serveur lighttpd
+
+apk add lighttpd php7-common php7-session php7-iconv php7-json php7-gd php7-curl php7-xml php7-mysqli php7-imap php7-cgi fcgi php7-pdo php7-pdo_mysql php7-soap php7-xmlrpc php7-posix php7-mcrypt php7-gettext php7-ldap php7-ctype php7-dom php7-simplexml php7-mbstring
+
+créer un dossier dans /usr/
+mkdir -p /usr/share/webapps 
+cd /usr/share/webapps 
+
+télécharger un fichier tar.gz dans ce dossier 
+wget http://files.directadmin.com/services/all/phpMyAdmin/phpMyAdmin-5.2.1-all-languages.tar.gz 
+
+explainshell => https://explainshell.com/
+https://cheat.sh/ => tar 
+
+tar zxvf phpMyAdmin-5.2.1-all-languages.tar.gz // décompresser tar.gz
+rm phpMyAdmin-5.2.1-all-languages.tar.gz  // supprimer l'archive
+mv phpMyAdmin-5.2.1-all-languages phpmyadmin // renommer 
+
+chmod 777 /usr/share/webapps 
+
+ln -s /usr/share/webapps/phpmyadmin /var/www/localhost/htdocs/phpmyadmin
+
+------------------
+
+adminer 
+
+cd /var/www/localhost/htdocs/
+mkdir adminer 
+cd adminer
+wget https://github.com/vrana/adminer/releases/download/v4.8.1/adminer-4.8.1.php
+mv adminer-4.8.1.php index.php
+chmod -R 777 index.php 
+
+
 
 
 
