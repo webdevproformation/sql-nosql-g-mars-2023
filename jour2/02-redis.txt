@@ -1,0 +1,62 @@
+redis => REmote DIctionary Server => NoSQL 
+clé valeur 
+
+CREATE DATABASE  
+CREATE TABLE 
+INSERT INTO 
+
+=> SET => ajouter
+=> GET => récupérer 
+
+dans la RAM du serveur 
+
+https://redis.io/commands/
+
+SET etudiant:1 Alain 
+
+
+MySQL   ----  redis   ------   PHP 
+
+https://redis.io/index.php/ (browser)
+
+=> requete http => lighttpd => index.php // serveur http
+
+???? cache ??? => redis il ya le tableau demande ?? 
+si oui => retour au lighttpd
+si non 
+
+requete SQL => SELECT * FROM commands ;  // mariadb
+mysql => exécuter traiter 
+[ 
+    commande1 => "GET",
+    commande2 => "SET"
+]
+ajouter le tableau à redis 
+
+lighttpd 
+browser 
+
+mysql / mongodb ------ redis --- php / js  apache ==> internet <== navigateur
+
+--------------------
+--------------------
+
+serveur DNS 
+
+google.fr => 8.8.8.8
+
+=> .fr => google => g
+
+=>  apk add redis
+
+=> vi /etc/redis.conf
+=>  vi /etc/redis.conf
+
+ajouter 
+bind 0.0.0.0
+:wq!
+
+rc-service redis restart
+
+netstat -putan
+

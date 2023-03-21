@@ -229,7 +229,10 @@ flush privileges;
 
 mysql -h 192.168.1.125 -utiti -p
 
-
+Erreur dans le traitement de la requête
+Code d'erreur : 500
+Texte de l'erreur : Internal Server Error (rejected)
+Il semble que la connexion au serveur aie été perdue. Merci de vérifier la connectivité réseau et l'état du serveur.
 
 --------------------------
 
