@@ -215,11 +215,30 @@ rc-service mariadb restart
 
 ----
 
-CREATE USER 'titi'@'%' IDENTIFIED BY 'toto';
+créer un compte qui permet d'accéder depuis l'extérieur 
+
+mysql -uroot -p 
+
+créer un compte utilisateur login titi / password : toto / host : %
+
+CREATE USER 'titi'@'%' IDENTIFIED BY 'toto'; // créer le compte user 
 GRANT ALL PRIVILEGES ON *.* TO 'titi'@'%' WITH GRANT OPTION;
 flush privileges;
 
+// 
+
 mysql -h 192.168.1.125 -utiti -p
+
+
+
+--------------------------
+
+client graphique
+
+$ wget -c https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
+$ sudo dpkg -i dbeaver-ce_latest_amd64.deb
+$ sudo apt-get install -f
+
 
 
 
