@@ -1,0 +1,68 @@
+mongodb => huMONGOus => énorme 
+Base de données NoSQL orientée Document 
+
+// Objet => Redis HASH 
+// Javascript => Objet 
+// format JSON 
+{
+    "clé" : "valeur",
+    "clé2" : "valeur"
+}
+
+=> relationnelles Base de données / TABLE / colonne / ligne
+=> mongodb        Base de données / collection / Document 
+
+// Projet à 100% en JS => MongoDB (base de données JSON)
+
+// install de mongodb 
+
+// apk add mongodb mongodb-tools
+
+// mkdir -p /data/db  => dans ce dossier que les données au format BJSON
+
+// modifier la config de mongodb pour utiliser avec un client visuel
+
+// vim /etc/conf.d/mongodb
+
+
+rc-service mongodb restart
+
+netstat -putan
+=> voir le port 27017
+
+--------------------
+
+mongo 
+mongo --quiet ;
+
+// liste de tous les bases 
+show dbs ; 
+
+
+admin   0.000GB => compte administrateur 
+config  0.000GB
+local   0.000GB
+
+ mysql : CREATE DATABASE demo ;
+
+use demo ; 
+
+mysql : CREATE TABLE etudiant ( id INT , nom VARCHAR(255) )
+
+// créer table (collection) etudiants et insérer un document dans cette table 
+db.etudiants.insert({ nom : "Alain" , age : 12 });
+
+const a = {};
+a.nom = "Céline"
+a.age = 25 ;
+a.isAdmin = true ;
+db.etudiants.insert(a);
+
+
+SELECT * FROM etudiants 
+
+db.etudiants.find() ;
+
+=> mongodbcompass => mongodb
+
+https://www.mongodb.com/

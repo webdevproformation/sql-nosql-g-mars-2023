@@ -56,3 +56,13 @@ exécuter des tâches d'administration d'une machine
 package.json (décrire le projet + définir ses dépendances )
 
 npm i === apk add <>
+
+SET user:1 
+SET user:2 
+
+GET user:1 
+
+SELECT * WHERE key = "user:1"
+
+
+vi /etc/my.cnf.d/mariadb-server.cnf
