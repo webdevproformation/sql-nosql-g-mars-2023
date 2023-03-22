@@ -4,8 +4,8 @@ import axios from "axios";
 import { createClient } from 'redis';
 
 const client = createClient({
-  url: 'redis://default:foobared@192.168.1.125:6379' 
-});
+  url: 'redis://default:foobared@192.168.1.103:6379' 
+}); 
 
 const app = express();
 
