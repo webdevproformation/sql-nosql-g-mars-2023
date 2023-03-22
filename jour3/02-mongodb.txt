@@ -161,11 +161,13 @@ authentification
 2 modifier le fichier de conf pour forcer l'authentification 
 3 modifier l'url pour accéder à la base via MongoDB Compass 
 
+mongo 
+
 use admin ;
 
 db.createUser(
     {
-        url : "root",
+        user : "root",
         pwd : "root",
         roles : [{ role : "userAdminAnyDatabase" , db : "admin" }]
     }
