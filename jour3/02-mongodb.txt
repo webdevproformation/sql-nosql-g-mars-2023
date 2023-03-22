@@ -127,3 +127,51 @@ port 22
 mongoimport --db demo --collection paris --file /home/u/paris.json --jsonArray
 
 
+
+db.paris.find({code_postal : "75006"}).pretty()
+
+// les résultats 
+db.paris.find({code_postal : "75006" , mot_cle : "culture"}).pretty()
+
+// nombre de résultats
+db.paris.find({code_postal : "75006" , mot_cle : "culture"}).count()
+
+db.paris.find({ "geo_shape.geometry.coordinates" : 2.325711410418117 }).pretty()
+
+
+db.paris.find({ "geo_shape.geometry.coordinates" : 2.325711410418117 }, {texte_description : 1 , code_postal : 1}).pretty()
+
+
+db.paris.find({ "geo_shape.geometry.coordinates" : 2.325711410418117 }, {texte_description : 1 , code_postal : 1 , _id : 0}).pretty()
+
+// cas pratique :
+// pouvez modifier la valeur de la propriété 
+code_postal du document qui a comme adresse 106 boulevard du montparnasse
+code_postal 75006 => 75008 
+
+db.paris.find({} , {texte_description : 1 , code_postal : 1}).pretty()
+
+db.paris.update({ adresse : "106 boulevard du montparnasse" } , { $set : { code_postal : "75008" } });
+
+
+
+authentification 
+
+1 créer un compte admin pour notre base de données 
+2 modifier le fichier de conf pour forcer l'authentification 
+3 modifier l'url pour accéder à la base via MongoDB Compass 
+
+use admin ;
+
+db.createUser(
+    {
+        url : "root",
+        pwd : "root",
+        roles : [{ role : "userAdminAnyDatabase" , db : "admin" }]
+    }
+)
+
+
+
+
+
