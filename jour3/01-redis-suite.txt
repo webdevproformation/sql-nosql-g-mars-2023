@@ -1,0 +1,58 @@
+vérifier que redis est démarré 
+
+rc-service redis status
+
+/etc/init.d/redis status 
+
+outil en ligne de commande => CLI 
+
+redis-cli
+
+AUTH default foobared
+
+base de données noSQL orientée clé valeur 
+pas de concept de table / colonne / ligne (nuplet)
+
+base et clé valeur 
+
+=> outil graphique qui permet de voir l'ensemble des clés disponibles 
+
+connaitre l'ensemble des clés stockées dans la base en cours 
+KEYS *
+
+CRUD => 
+
+# si c'est la clé n'existe pas INSERT => création de clé valeur
+SET demo "comment allez vous ?" 
+# récupérer l'information 
+GET demo 
+# si la clé existe UPDATE => écraser la valeur précédente
+SET demo "modification"
+// supprimer la clé 
+DEL demo 
+
+TTL => redis ()
+DNS (nom de domaine)  => TTL
+
+Time To Live => automatiquement redis peut la supprimer automatiquement au bout d'un certain temps 
+
+// crée la clé animal => chien 
+SET animal chien
+// TTL de 10 secondes pour cette clé 
+EXPIRE animal 10 
+
+// par défaut redis va snapshot (faire une photo)
+// automatique 
+SAVE 
+
+sqlite3 fichier.sqlite .dump > /tmp/back.sql 
+
+langage javascript => langage client (langage exécuté dans le navigateur web)
+
+à partir de 2010 
+récupérer le moteur js dans chrome + emballer dans du C++ => NodeJS 
+exécuter des tâches d'administration d'une machine 
+
+package.json (décrire le projet + définir ses dépendances )
+
+npm i === apk add <>
