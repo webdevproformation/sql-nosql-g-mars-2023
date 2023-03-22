@@ -173,6 +173,11 @@ db.createUser(
     }
 )
 
+show users ;
+
+db.changeUserPassword("root", "123456")
+
+
 
 
 
