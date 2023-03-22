@@ -1,0 +1,18 @@
+support de cours :
+url : https://formation.webdevpro.net/sql-nosql/ (pas dans google directement dans l'url)
+login : sql 
+password : nosql 
+(en minuscules)
+
+------------------
+
+toutes les notes de cours :
+
+https://github.com/webdevproformation/sql-nosql-g-mars-2023
+
+
+support 
+
+https://formation.webdevpro.net/sql 
+login sql 
+password sql
