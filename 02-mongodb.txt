@@ -79,6 +79,47 @@ db.etudiants.find({ nom : { $in : ["Alain", "Charles"] }}) // Alain ou Charles
 
 db.etudiants.find({ nom : "Alain" } , { nom : 1 })
 db.etudiants.find({nom:"Alain"},{nom:1,_id:0}) 
-
 db.etudiants.find({nom : { $regex : /rl/g }})
 
+update 
+// mongodb 
+db.etudiants.update({nom : "Alain" }, { $set : { nom : "Jean Pierre", age : 60 }})
+
+// SQL 
+UPDATE etudiants SET nom : "Jean Pierre" , age = 60 WHERE nom = "Alain";
+
+delete 
+db.etudiants.remove({nom : "Jean Pierre"})
+
+DELETE FROM etudiants WHERE nom = "Jean Pierre"
+
+db.etudiants.remove({_id : ObjectId("641ad706f2c40aa92f6fd766")})
+
+show dbs ;
+use demo ;
+show collections ;
+
+db.nom.insert({})
+// créer la collection nom si elle n'existe pas 
+// ajouter la ligne dans la collection nom 
+
+
+remplir notre base de données mongodb via des fichiers json 
+
+=> récupérer un fichier .json 
+support chapitre 9 MongoDB > section 7 jeu de données 
+
+apk add vsftpd
+
+Lancer sur votre ordinateur Filezilla 
+
+host :
+sftp://192.168.1.103
+login :
+malik 
+password :
+root 
+port 21
+
+
+mongoimport --db demo --collection paris --file /home/malik/paris.json --jsonArray
