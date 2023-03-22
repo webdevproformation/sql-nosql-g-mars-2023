@@ -1,0 +1,59 @@
+Elastic Search 
+
+projet open source qui permet de créer des moteurs de recherche à la google 
+
+vous allez pouvoir stocker une énorme quantité de documents 
+
+réaliser de requête de recherche sur cette base de données 
+
+SQL  sqlite / mariadb
+GET SET  redis 
+db.collection.find()
+db.collection.update()
+db.collection.remove()
+
+protocole HTTP 
+
+client firefox => GET url  => 200 //  404 // 500 
+               => POST { }
+               => PUT mis à jour
+               => DELETE 
+
+protocole HTTP
+
+403 => Forbidden (pas autorisé)
+401 => erreur dans la demande 
+
+système très puissant 
+
+installation 
+
+apk add elasticsearch
+
+apk add openjdk9 
+
+vi /etc/elasticsearch/jvm.options 
+
+j'ai modifié le fichier vi /etc/elasticsearch/jvm.options 
+
+j'ai modifié
+
+# modifier les valeurs 
+-Xms2g
+-Xmx2g 
+ 
+par défaut : 
+ 9-:-Xlog:gc*,gc+age=trace,safepoint:file=/logs/gc.log:utctime,pid,tags:filecount=32,filesize=64m 
+
+  9-:-Xlog:gc*,gc+age=trace,safepoint:file=/var/log/elasticsearch/gc.log:utctime,pid,tags:filecount=32,filesize=64m
+
+Esc 
+:wq!
+
+rc-service elasticsearch restart => 
+
+apk add elasticsearch <=====
+vim /etc/elasticsearch/jvm.options
+
+coucou jb ??? comment vas tu ?? 
+
