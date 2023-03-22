@@ -111,6 +111,8 @@ support chapitre 9 MongoDB > section 7 jeu de données
 
 apk add vsftpd
 
+rc-service vsftpd start 
+
 Lancer sur votre ordinateur Filezilla 
 
 host :
@@ -119,7 +121,9 @@ login :
 malik 
 password :
 root 
-port 21
+port 22 
 
 
-mongoimport --db demo --collection paris --file /home/malik/paris.json --jsonArray
+mongoimport --db demo --collection paris --file /home/u/paris.json --jsonArray
+
+
