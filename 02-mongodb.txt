@@ -58,7 +58,6 @@ a.age = 25 ;
 a.isAdmin = true ;
 db.etudiants.insert(a);
 
-
 SELECT * FROM etudiants 
 
 db.etudiants.find() ;
@@ -66,3 +65,20 @@ db.etudiants.find() ;
 => mongodbcompass => mongodb
 
 https://www.mongodb.com/
+
+CRUD 
+Create ajouter de nouveaux document dans la collection etudiants 
+db.etudiants.insert({ nom : "Benoit" , age : 40 , dt_creation : new Date() })
+
+db.etudiants.insertMany([ {nom : "Charlotte"}, {nom : "Charles"} ])
+
+Read 
+db.etudiants.find() // récupérer TOUT 
+db.etudiants.find({ nom : "Alain" }) // que Alain
+db.etudiants.find({ nom : { $in : ["Alain", "Charles"] }}) // Alain ou Charles 
+
+db.etudiants.find({ nom : "Alain" } , { nom : 1 })
+db.etudiants.find({nom:"Alain"},{nom:1,_id:0}) 
+
+db.etudiants.find({nom : { $regex : /rl/g }})
+
