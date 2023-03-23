@@ -209,3 +209,12 @@ contient 3 documents / enregistrements
 
 Partie 2 :
 pouvez vous modifier le nombre de point du dernier exo => 5 => 40 
+
+
+
+curl -XPUT -H "Content-Type: application/json" 192.168.1.103:9200/_bulk --data-binary @movies_elastic.json
+
+
+http://192.168.1.103:9200/movies/movie/_search
+
+importer 4800 films 
