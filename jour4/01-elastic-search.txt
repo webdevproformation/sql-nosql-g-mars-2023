@@ -218,3 +218,9 @@ curl -XPUT -H "Content-Type: application/json" 192.168.1.103:9200/_bulk --data-b
 http://192.168.1.103:9200/movies/movie/_search
 
 importer 4800 films 
+
+
+ElasticSearch moteur de recherche qui permet de réaliser des recherches sur l'ensemble des valeurs stockées dans la base 
+
+http://192.168.1.103:9200/movies/movie/_search?q=star wars
+
