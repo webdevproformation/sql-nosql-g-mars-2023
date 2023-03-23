@@ -1,3 +1,55 @@
 Installé elasticsearch (utilisez la VM installée Lundi)
 
 apk add elasticsearch
+
+apk add openjdk9 (installé la version de java version 9 compatible avec elasticsearch)
+
+--------------
+
+modification dans la config 
+
+vi /etc/elasticsearch/jvm.options
+
+=> mis + de RAM pour la machine Java Virtuelle 
+-Xms2g
+-Xmx2g
+
+=> à la fin du fichier jvm.options
+modifier une config 
+initialement 
+9-:-Xlog:gc*,gc+age=trace,safepoint:file=logs/gc.log:utctime,pid,tags:filecount=32,filesize=64m 
+
+9-:-Xlog:gc*,gc+age=trace,safepoint:file=/var/log/elasticsearch/gc.log:utctime,pid,tags:filecount=32,filesize=64m 
+
+--------------
+
+démarrer elastic search => rc-service elasticsearch start (via une connexion SSH)
+
+lancer un terminal => connecté en ssh : ssh malik@192.168.1.103 
+root 
+
+une fois connecté => met en root 
+su -
+root 
+
+rc-service elasticsearch start
+
+lors que 1er du premier lancement 
+
+* Caching service dependencies ...                                       [ ok ]
+ * /var/lib/elasticsearch/_default: correcting owner
+ * /var/lib/elasticsearch: correcting mode
+ * /var/lib/elasticsearch: correcting owner
+ * /var/lib/elasticsearch/_default/data: creating directory
+ * /var/lib/elasticsearch/_default/data: correcting owner
+ * /var/tmp/elasticsearch/_default: creating directory
+ * /var/tmp/elasticsearch/_default: correcting owner
+ * /var/lib/elasticsearch/_default/plugins: creating directory
+ * /var/lib/elasticsearch/_default/plugins: correcting owner
+ * /etc/elasticsearch/scripts: creating directory
+ * /var/log/elasticsearch: correcting owner
+ * Max open filedescriptors: 65536
+ * vm.max_map_count: 262144
+ * Starting Elasticsearch ...
+
+ => top => un processus avec un user elastico qui fonctionne 
