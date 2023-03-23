@@ -301,5 +301,24 @@ rechercher "star" "wars" soit les deux dans n'importe quel ordre uniquement sur 
 
 Cas pratique : 
 // rechercher tous les films dans lesquels Harrison Ford a joué ?
+http://192.168.1.103:9200/movies/movie/_search/?q=fields.actors:"Harrison Ford"
+
+http://192.168.1.103:9200/movies/movie/_search/?q=fields.actors:"Harrison Ford" fields.title:"Indiana Jones"
 // rechercher tous les films dont le plot contient le mot Jones ?
+
+
+
+http://192.168.1.103:9200/movies/movie/_search/?q=fields.actors:"Harrison Ford" fields.title:"Indiana Jones"
+
+POST http://192.168.1.103:9200/movies/movie/_search/
+{
+ "query" :  {
+      "bool" : { 
+        "must" : [
+          { "match" : {"fields.actors" : "Harrison Ford"} },
+          { "match" : {"fields.title" : "Indiana Jones"} }
+        ]
+      }
+    }
+}
 
