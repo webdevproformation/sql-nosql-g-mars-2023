@@ -279,3 +279,22 @@ objet JSON qui va permettre de décrire ce que vous voulez chercher
         "match" : { "fields.title" : "star wars" }
     }
 }
+
+http://192.168.1.103:9200/movies/movie/_search/?q=star wars => 77
+
+{
+    "query" : {
+        "query_string" : { 
+            "query" : "star wars"
+        }
+    }
+}
+// chercher soit star / soit wars dans n'importe quelle champ des n'importe quel ordre 
+
+http://192.168.1.103:9200/movies/movie/_search/?q="star wars" => 8
+
+rechecher "star wars" dans cette ordre dans n'importe quel champ 
+
+http://192.168.1.103:9200/movies/movie/_search/?q=fields.title:star wars = 32
+
+rechercher "star" "wars" soit les deux dans n'importe quel ordre uniquement sur le champ title 
