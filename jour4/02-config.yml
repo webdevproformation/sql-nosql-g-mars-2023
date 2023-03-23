@@ -1,0 +1,17 @@
+base:
+  info1: 
+    12
+  info2:
+    - element1
+    - element2
+    - element 3
+  info3: ["jogging" ,"cuisine" ]
+
+  text: >
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    Adipisci officiis nemo quod a ipsam repellat hic, iusto 
+    impedit voluptates blanditiis mollitia earum officia porro 
+
+  plugin a installer: |
+    indent-rainbow
+

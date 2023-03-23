@@ -338,3 +338,53 @@ SELECT * FROM table WHERE ....=> dans une base de données relationnelles
 Cas pratique : 
 // chercher tous les films réalisés par Spielberg dans le quel les plot contient soit le mot red ou Jurassic ou father 
 
+
+POST http://192.168.1.103:9200/movies/movie/_search/
+{
+    "query" : {
+        "bool" : {
+            "must" : [
+                { "match" : { "fields.directors" : "Spielberg" }},
+                { "match" : { "fields.plot" : "red Jurassic father" }}
+            ]
+        }
+    }
+}
+
+{
+    "query" : {
+        "query_string" : {
+            "query" : [{ "match" : { "fields.plot" : "red Jurassic father" }},{"match" : { "fields.directors" : "Spielberg" }}]
+        }
+    }
+}
+.yml 
+{
+    "query" : {
+        "bool" : [
+            {  },
+            {  }
+        ]    
+    }
+}
+// extension indent ran
+
+// une idée de l'apparence de base de données 
+sur mon ordinateur :
+git clone https://github.com/mobz/elasticsearch-head.git 
+cd elasticsearch-head
+npm install
+npm run start
+
+ouvrir sur mon navigateur : http://localhost:9100/
+
+dans le champ input http://192.168.1.103:9200
+
+je vais ajouter 2 lignes à la fin du fichier  elasticsearch.yml
+vim /etc/elasticsearch/elasticsearch.yml
+
+#ajouter les lignes suivantes à la fin du fichier
+http.cors.enabled: true
+http.cors.allow-origin: "*"
+
+rc-service elasticsearch restart
