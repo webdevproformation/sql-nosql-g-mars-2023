@@ -177,6 +177,18 @@ show users ;
 
 db.changeUserPassword("root", "123456")
 
+exit 
+vim /etc/conf.d/mongodb 
+
+ rc-service mongodb restart
+
+ mongodb://root:root@192.168.1.103:27017/?authMechanism=DEFAULT
+
+use admin 
+db.auth("root", "root")
+ db.grantRolesToUser("root", [ { role: "readWrite", db: "demo" } ])
+
+
 
 
 

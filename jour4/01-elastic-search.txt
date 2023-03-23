@@ -1,0 +1,3 @@
+Installé elasticsearch (utilisez la VM installée Lundi)
+
+apk add elasticsearch
