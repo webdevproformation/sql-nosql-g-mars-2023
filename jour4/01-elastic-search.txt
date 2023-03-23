@@ -97,6 +97,12 @@ id 1
 
 => objet en json 
 {""}
+client sqlite3 fichier.sqlite 
+SELECT * FROM table 
+
+GET  http://192.168.1.103:9200/etudiants/_search 
+
+10h55 !! bon café !!
 
 
 => Postman (client http idéal pour communiquer avec n'importe quelle API Restfull)
@@ -104,3 +110,49 @@ ce logiciel est à installer sur votre ordinateur => https://www.postman.com/
 
 télécharger et installez postman sur votre ordinateur :
 https://www.postman.com/downloads/
+
+
+CRUD 
+
+
+à la place d'utiliser POSTMAN ou extension pour réaliser une requête http 
+
+vous pouvez utiliser un terminal : saisir la commande suivante 
+curl -X POST -H 'Content-Type: application/json' -i 'http://192.168.1.103:9200/toto/titi' --data '{
+"nom" : "Alain",
+"largeur" : 20,
+"isAdmin" : 30
+}'
+
+
+{
+    "_index":"toto", // base 
+    "_type":"titi", // table
+    "_id":"woDlDYcBY9hd4mJtgCri", // clé primaire 
+    "_version":1,
+    "result":"created",
+    "_shards":{"total":2,"successful":1,"failed":0},
+    "_seq_no":0,
+    "_primary_term":1
+}
+
+POST http://192.168.1.103:9200/toto/titi/_bulk 
+
+{"index":{}}
+{"nom": "Benoit", "largeur": 50 , "isAdmin" : 30}
+{"index":{}}
+{"nom": "Céline", "largeur": 4 , "isAdmin" : 4}
+
+
+// attention pour insert multiples => il ne fait pas sauter de ligne
+
+POST http://192.168.1.103:9200/toto/titi/_bulk 
+{"index":{}}
+{"nom": "Charles", "largeur": 50 , "istest" : 30}
+{"index":{}}
+{"nom": "Emilie", "largeur": 4 , "istest" : 4}
+saut de ligne 
+
+// connaitre la liste des colonnes d'un type (table) 
+
+GET http://192.168.1.103:9200/toto/titi/_mapping
