@@ -156,3 +156,17 @@ saut de ligne
 // connaitre la liste des colonnes d'un type (table) 
 
 GET http://192.168.1.103:9200/toto/titi/_mapping
+
+si je veux réaliser un UPDATE sur un enregistrement dans la base 
+
+
+GET http://192.168.1.103:9200/toto/titi/_search?q=Charles
+
+PUT http://192.168.1.103:9200/toto/titi/yoDvDYcBY9hd4mJt3SrY
+{
+    "nom": "Charles", 
+    "largeur": 600 , 
+    "istest" : 30
+}
+
+// il faut remettre TOUS les champs ce qui doivent être modifiée ET ceux qui ne changent pas 
