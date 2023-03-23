@@ -438,3 +438,18 @@ malik.h@webdevpro.net
 => Cassandra => sur une machine virtuelle debian /
 => keyspace / column family / row / column 
 => google form (question rédigée vers la 2ème pause ! du matin )
+
+curl => outil qui permet de réaliser des requête http GET / POST / PUT / DELETE en ligne de commande (comme post man)
+
+powersheel dans windows :
+Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
+ou 
+Invoke-WebRequest get.scoop.sh | Invoke-Expression
+
+
+scoop -v
+
+scoop install curl 
+
+https://scoop.sh/#/apps?q=curl&s=0&d=1&o=true
