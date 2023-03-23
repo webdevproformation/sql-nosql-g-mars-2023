@@ -298,3 +298,8 @@ rechecher "star wars" dans cette ordre dans n'importe quel champ
 http://192.168.1.103:9200/movies/movie/_search/?q=fields.title:star wars = 32
 
 rechercher "star" "wars" soit les deux dans n'importe quel ordre uniquement sur le champ title 
+
+Cas pratique : 
+// rechercher tous les films dans lesquels Harrison Ford a joué ?
+// rechercher tous les films dont le plot contient le mot Jones ?
+
