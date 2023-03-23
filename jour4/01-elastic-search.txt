@@ -389,3 +389,47 @@ rc-service elasticsearch restart
 ---------------- 
 ouvrir sur mon navigateur : http://localhost:9100/
 dans le champ input http://192.168.1.103:9200
+
+
+cluster => grappe de machine qui communiquent l'une avec l'autre 
+
+dans la machine http://192.168.1.103:9200/
+
+modifier la config 
+vi /etc/elasticsearch/elasticsearch.yml
+
+#décommenter la ligne
+cluster.name: greta
+
+#décommenter la ligne
+node.name: Zerg
+
+# donner l'ip de l'autre machine qui contient une instance de Elastic Search
+discovery.zen.ping.unicast.hosts: ["192.168.1.39"]
+
+dans la machine http://192.168.1.39:9200/
+installation complète => alpine puis installé elastic search 
+apk add elasticsearch
+apk add openjdk9
+vi /etc/elasticsearch/jvm.options
+
+vi /etc/elasticsearch/elasticsearch.yml
+
+#décommenter la ligne
+cluster.name: greta
+
+#décommenter la ligne
+node.name: Protoss 
+
+# donner l'ip de l'autre machine qui contient une instance de Elastic Search
+discovery.zen.ping.unicast.hosts: ["192.168.1.103"]
+
+rc-service elasticsearch restart
+
+cluster => grappe de machine qui communiquent l'un avec l'autre 
+
+vous pouvez voir les deux machines communiquer (dans elasticsearch head )
+http://localhost:9100/
+
+créer un cluster (grappe ) => facilement
+
