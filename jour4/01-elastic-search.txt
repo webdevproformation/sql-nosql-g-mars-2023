@@ -180,6 +180,15 @@ Cas pratique :
 Partie 1 :
 Créer une nouvelle base exo1 et qui contient la table enonce
 
+POST http://192.168.1.103:9200/exo1/enonce/_bulk 
+{"index" :{}}
+{"description" : "premier exo", "nbPoint" : 10, "duree" : 20 }
+{"index" :{}}
+{ "description" : "deuxieme exo" , "nbPoint" : 30, "duree" : 5 }
+{"index" :{}}
+{"description" : "dernier exo" , "nbPoint" : 5 , "duree" : 100 }
+
+
 contient 3 documents / enregistrements
 
 {
