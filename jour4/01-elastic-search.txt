@@ -374,11 +374,8 @@ sur mon ordinateur :
 git clone https://github.com/mobz/elasticsearch-head.git 
 cd elasticsearch-head
 npm install
+npm audit fix --force
 npm run start
-
-ouvrir sur mon navigateur : http://localhost:9100/
-
-dans le champ input http://192.168.1.103:9200
 
 je vais ajouter 2 lignes à la fin du fichier  elasticsearch.yml
 vim /etc/elasticsearch/elasticsearch.yml
@@ -388,3 +385,9 @@ http.cors.enabled: true
 http.cors.allow-origin: "*"
 
 rc-service elasticsearch restart
+
+---------------- 
+
+ouvrir sur mon navigateur : http://localhost:9100/
+
+dans le champ input http://192.168.1.103:9200
