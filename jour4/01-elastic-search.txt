@@ -322,3 +322,19 @@ POST http://192.168.1.103:9200/movies/movie/_search/
     }
 }
 
+// oui ça 
+SELECT * FROM table WHERE ....=> dans une base de données relationnelles
+{
+ "query" :  {
+      "bool" : { 
+        "should" : [
+          { "match" : {"fields.actors" : "Harrison Ford"} },
+          { "match" : {"fields.title" : "Indiana Jones"} }
+        ]
+      }
+    }
+}
+
+Cas pratique : 
+// chercher tous les films réalisés par Spielberg dans le quel les plot contient soit le mot red ou Jurassic ou father 
+
