@@ -73,3 +73,34 @@ dans votre ordinateur lancer un navigateur web
 
 http://192.168.1.<103>:9200/ => page qui doit vous donner les caractéristiques de votre base de données Elastic Search 
 
+coucou Pedro !!!!
+
+-----------------------
+
+Comment remplir Elastic Search 
+
+=> le protocole HTTP pour faire des requêtes avec cette base de données 
+
+=> API Rest 
+verbe 
+=> verbes du langage HTTP => GET / POST / PUT / DELETE 
+
+url 
+=> url :  http://host:port/[index]/[type]/[_action|id]
+
+=> url :  http://192.168.1.103:9200/[index]/[type]/[_action|id]
+
+index => base 
+type => table 
+_action => _search / _bulk ... mise à disposition pour ElasticSearch 
+id 1 
+
+=> objet en json 
+{""}
+
+
+=> Postman (client http idéal pour communiquer avec n'importe quelle API Restfull)
+ce logiciel est à installer sur votre ordinateur => https://www.postman.com/
+
+télécharger et installez postman sur votre ordinateur :
+https://www.postman.com/downloads/
