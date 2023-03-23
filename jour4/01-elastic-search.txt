@@ -170,3 +170,33 @@ PUT http://192.168.1.103:9200/toto/titi/yoDvDYcBY9hd4mJt3SrY
 }
 
 // il faut remettre TOUS les champs ce qui doivent être modifiée ET ceux qui ne changent pas 
+
+suppression 
+
+DELETE http://192.168.1.103:9200/toto/titi/woDlDYcBY9hd4mJtgCri
+
+Cas pratique :
+
+Partie 1 :
+Créer une nouvelle base exo1 et qui contient la table enonce
+
+contient 3 documents / enregistrements
+
+{
+    description : "premier exo"
+    nbPoint : 10,
+    duree : 20
+}
+{
+    description : "deuxieme exo"
+    nbPoint : 30,
+    duree : 5
+}
+{
+    description : "dernier exo"
+    nbPoint : 5,
+    duree : 100
+}
+
+Partie 2 :
+pouvez vous modifier le nombre de point du dernier exo => 5 => 40 
