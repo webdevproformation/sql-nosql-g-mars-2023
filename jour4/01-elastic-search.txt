@@ -224,3 +224,58 @@ ElasticSearch moteur de recherche qui permet de réaliser des recherches sur l'e
 
 http://192.168.1.103:9200/movies/movie/_search?q=star wars
 
+http://192.168.1.103:9200/movies/movie/_search?q=star+wars
+
+http://192.168.1.103:9200/movies/movie/_search?q="star+wars" 
+
+les résultats sont affichés par "pertinence"
+indice de pertinence => où est positioner le ou les mots recherché 
+star wars 
+star 
+wars dans n'importe quel ordre 
+
+
+SELECT * FROM movies WHERE titre LIKE "%star wars%" OR de
+
+
+_shards => partie de la base de données 
+par défaut lorsque vous lancer votre base de données elastic search 
+découpe la base en 5 parties (5 shards)
+
+dans le serveur => 
+Elastic Search (outil qui permet de communiquer avec une base de données générée via Lucene => Java )
+
+interroger la base via Postman => GET / POST / PUT / DELETE  => Elastic Search
+par défaut 
+
+créer une base dans ElasticSearch via 
+ POST http://192.168.1.103:9200/movies/movie/_bulk 
+ fichier.json 
+
+ par défaut il va répartir les informations sur 5 shards (sur 5 fichiers / 5 parties )
+
+toi en tant que utilisateur du moteur de recherche => 
+
+http://192.168.1.103:9200/movies/movie/_search?q=mot clé 
+
+les données stockées dans le dossier :
+/var/lib/elasticsearch/_default/data/
+
+pas possible par défaut de partager des informations entre le moteur de recherche ElasticSearch et mongoDb 
+
+créer des scripts prendre des données dans une base mongoDB => POST vers la base ElasticSearch 
+
+pour réaliser des recherches dans ElasticSearch 
+Query DSL
+
+sur postman 
+
+POST http://192.168.1.103:9200/movies/movie/_search
+
+objet JSON qui va permettre de décrire ce que vous voulez chercher 
+
+{
+    "query" : {
+        "match" : { "fields.title" : "star wars" }
+    }
+}
