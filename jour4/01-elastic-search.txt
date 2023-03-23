@@ -21,6 +21,10 @@ initialement
 
 9-:-Xlog:gc*,gc+age=trace,safepoint:file=/var/log/elasticsearch/gc.log:utctime,pid,tags:filecount=32,filesize=64m 
 
+cd /var/log/elasticsearch
+
+tail error.log
+
 --------------
 
 démarrer elastic search => rc-service elasticsearch start (via une connexion SSH)
@@ -53,3 +57,19 @@ lors que 1er du premier lancement
  * Starting Elasticsearch ...
 
  => top => un processus avec un user elastico qui fonctionne 
+
+
+vim /etc/elasticsearch/elasticsearch.yml
+
+aller à la ligne 55 
+#network.host: 192.168.0.1
+décommenter et remplacer 192.168.0.1 par 0.0.0.0
+
+network.host: 0.0.0.0
+
+rc-service elasticsearch restart
+
+dans votre ordinateur lancer un navigateur web 
+
+http://192.168.1.<103>:9200/ => page qui doit vous donner les caractéristiques de votre base de données Elastic Search 
+
