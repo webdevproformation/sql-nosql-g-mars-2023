@@ -431,5 +431,10 @@ cluster => grappe de machine qui communiquent l'un avec l'autre
 vous pouvez voir les deux machines communiquer (dans elasticsearch head )
 http://localhost:9100/
 
-créer un cluster (grappe ) => facilement
+créer un cluster ( grappe ) => facilement
 
+malik.h@webdevpro.net
+
+=> Cassandra => sur une machine virtuelle debian /
+=> keyspace / column family / row / column 
+=> google form (question rédigée vers la 2ème pause ! du matin )
