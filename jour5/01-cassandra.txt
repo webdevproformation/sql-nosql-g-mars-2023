@@ -1,0 +1,15 @@
+Dernier type de base de données NoSQL 
+
+Cassandra DB => Base de données NoSQL
+
+initiatialement Cassandra => projet créé par Facebook => pouvoir faire des recherches rapide dans un énorme base de données 
+
+donnée à la fondation Apache => open source 
+
+=> comme pour Elastic Search base données facilement clusturisable (créer un serveur (Noeud) qui contient la base => ) modifie des paramètrages dans le serveur (Node1) et que l'on crée un autre serveur (Node2) =>
+
+=> facilement les machines fonctionnent en collaboration  .
+
+=> comment concevoir notre base de données ??? 
+
+=> base de données NoSQL Orientée Colonnes => il va falloir designer nos tables => Query First 
