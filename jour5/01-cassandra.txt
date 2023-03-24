@@ -87,3 +87,15 @@ sur le disque dur de la machine
 => SWAP (si on n'a pas suffisament de RAM => le disque dur peut jouer le role de RAM) 3.5G logique swap 
 
 https://prod.liveshare.vsengsaas.visualstudio.com/join?0637279C94885FC1CCC54BFA7DF4F67557F8
+
+
+=> ip a sur la machine Debian qui a redémarrée 
+=> 192.168.1.40 
+
+=> lancer un terminal sur l'ordinateur et je vais établir une connexion SSH 
+
+ssh malik@192.168.1.40 
+fingerprint => yes 
+password : root 
+
+=> etes vous bloqués ??? puis je vous donner un coup de main pour installer votre Debian ??? 
