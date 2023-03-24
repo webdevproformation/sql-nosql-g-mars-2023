@@ -12,4 +12,45 @@ donnée à la fondation Apache => open source
 
 => comment concevoir notre base de données ??? 
 
-=> base de données NoSQL Orientée Colonnes => il va falloir designer nos tables => Query First 
+=> base de données NoSQL Orientée Colonnes => il va falloir designer nos tables => Query First => 
+
+Créer des tables qui permettent de répondre à des requêtes SANS avoir à faire de JOINTURE 
+
+TABLE user 
+id  nom prenom salaire id_vehicule
+PK  ALain DOE  100000     3 
+                         FK : Foreign Key (clé étrangère / secondaire )
+
+TABLE vehicule 
+id  model 
+1     BMW
+2     Peugeot
+3     Nissan 
+
+en SQL classique => MySQL / MariaDB POstGRE / Oracle / sqlite 
+// la liste des users qui ont un vehicule de marque Nissan 
+SELECT *
+FROM user 
+JOIN vehicule 
+ON vehicule.id = user.id_vehicule 
+WHERE vehicule.model = "Nissan" ; // jointure 
+
+Cassandra ne permet pas de réaliser des jointures
+
+// créer table Query First => car on ne peut pas réaliser de JOIN 
+// ce n'est pas du SQL dans Cassandra
+// CQL => Cassandra Query Langage (sous version du SQL )
+
+// Elastic Search => ils ont réinventer le langage SQL =>  Query DSL 
+
+
+// Lorsque l'on travaille avec Cassandra DB => certaines informations qui doivent être doublée (répétée dans plusieurs tables )
+
+
+
+---------------------------------
+
+
+
+
+
