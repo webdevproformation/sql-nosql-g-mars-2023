@@ -111,3 +111,36 @@ Installer Cassandra dans cette nouvelle machine !!
 
 https://formation.webdevpro.net/sql-nosql/07-cassandra.html 
 (section3)
+
+nodetool status
+
+Datacenter: datacenter1
+=======================
+Status=Up/Down
+|/ State=Normal/Leaving/Joining/Moving
+--  Address    Load       Tokens       Owns (effective)  Host ID                               Rack
+UN  127.0.0.1  128,02 KiB  256          100,0%            eb37e6f3-8861-47ac-aac3-239d5212a7b8  rack1
+
+u up 
+n normal 
+
+=> décrit l'infrastructure où sont stockées les données de Cassandra 
+
+-----------------------
+
+client en ligne de commande / mongo / sqlite3 mysql / redis-cli 
+
+sqlsh 
+=> outil en ligne de commande qui permet de créer 
+
+Base de données dans Cassandra => KEYSPACE 
+TABLE / COLUMNFAMILY 
+ROW ligne 
+COLUMN (là où stocke des données )
+
+=> attention dans Cassandra on crée des KEYSPACE (équivalent de base de données du monde relationnel)
+
+
+
+
+
