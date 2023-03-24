@@ -46,11 +46,44 @@ Cassandra ne permet pas de réaliser des jointures
 
 // Lorsque l'on travaille avec Cassandra DB => certaines informations qui doivent être doublée (répétée dans plusieurs tables )
 
-
-
 ---------------------------------
 
+installer une VM => debian => machine un shell pas de version où on installer un bureau 
+debian =>
 
+1 récupérer l'ISO : https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-11.6.0-amd64-netinst.iso
 
+Nouvelle VM :
+Nom de la machine => Cassandra DB 
 
+Linux 
+Debian 64 version 11 Bullseye
 
+Processeur 2 Processeur
+RAM 4 Go 
+Disque dur 20 Go 
+
+Config 
+
+Réseau  => Accès par pont (bridge)
+Stockage => COntrolleur IDE => sélectionner l'ISO téléchargé précédemment
+Système => Disque Dur en 1er 
+
+Démarrer la VM => 
+Installation de Débian dans la VM
+
+Graphical Install
+Français x 3
+indiquer le nom du système : cassandra
+home 
+compte super admin => password : root x 2
+le compte user en + => malik (mettez votre prénom)
+et password de malik => root x 2
+Partitionnement du disque => Manuel
+
+sur le disque dur de la machine 
+2 parties 
+=> OS  18G primaire ext4
+=> SWAP (si on n'a pas suffisament de RAM => le disque dur peut jouer le role de RAM) 3.5G logique swap 
+
+https://prod.liveshare.vsengsaas.visualstudio.com/join?0637279C94885FC1CCC54BFA7DF4F67557F8
