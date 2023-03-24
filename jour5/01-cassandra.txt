@@ -210,3 +210,21 @@ SELECT * FROM demo2 WHERE nom = 'Céline' ; // message d'erreur réponse peut ê
 
 SELECT * FROM demo2 WHERE nom = 'Céline' ALLOW FILTERING ; // possible en ajoutant l'option  ALLOW FILTERING dans la requête recherche 
 
+créer des tables qui répondre à tes requêtes 
+
+
+CREATE TABLE vehicule_par_user (
+    model text ,
+    id_user int,
+    nom_user text,
+    service_user text ,
+    PRIMARY KEY(model  , id_user  )
+);
+
+INSERT INTO vehicule_par_user (model , id_user, nom_user , service_user) VALUES ('BMW' , 1 , 'Alain' , 'IT');
+INSERT INTO vehicule_par_user (model , id_user, nom_user , service_user) VALUES ('BMW' , 2 , 'Benoit' , 'RH');
+INSERT INTO vehicule_par_user (model , id_user, nom_user , service_user) VALUES ('Peugeot' , 3 , 'Céline' , 'IT');
+
+cette table permet de répondre à la question => quel marque par collaborateur 
+qui conduit une peugeot ??? => Query First  
+
