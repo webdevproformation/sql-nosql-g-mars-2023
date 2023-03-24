@@ -99,3 +99,15 @@ fingerprint => yes
 password : root 
 
 => etes vous bloqués ??? puis je vous donner un coup de main pour installer votre Debian ??? 
+
+// rdv 10h40 (heure de Paris) pour l'install de Cassandra sur votre nouvelle machine debian !!!
+
+// bon café !!!!!!!!
+
+
+----------------------
+
+Installer Cassandra dans cette nouvelle machine !! 
+
+https://formation.webdevpro.net/sql-nosql/07-cassandra.html 
+(section3)
