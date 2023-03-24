@@ -140,7 +140,73 @@ COLUMN (là où stocke des données )
 
 => attention dans Cassandra on crée des KEYSPACE (équivalent de base de données du monde relationnel)
 
+CREATE DATABASE nom_base (sql)
+
+CREATE KEYSPACE nom_keyspace Tab ( le nombre de replication de chaque node cassandra  )
 
 
+CREATE KEYSPACE nom_keyspace WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1} ;
 
+chaque serveur / node de Cassandra est par défaut répliqué information en + 1 
+ 'SimpleStrategy' => 
+
+ lorsque vous créez une Base => définir des critère des replications des lignes / données quelle stocke
+
+ => sur la chque ligne des tables dans la base Cassandra => clé de Partition (la 1ère colonne)
+ => les lignes d'une table dans Cassandra ne sont pas stockées par défaut au même endroit dans le disque dur du serveur 
+ => stocker sur plusieurs serveurs (node) par défaut 
+ => en + Cassandra a système de replication automatique des informations en + écrire l'information sur 1 seul node => copie de l'information sur un autre node 
+
+ => RAID 
+
+ => Cassandra => cluster => ring (anneau)
+
+ => 
+
+ INSERT INTO table => écrire dans 1 fichier 1 seule endroit du serveur 
+
+ INSERT INTO table_cassandra => clé => quel node il écrire les info ?? 
+ // en + Automatiquement cassandra va écrire à nouveau l'information dans un autre node &
+
+ DESCRIBE KEYSPACES 
+ la liste des Keyspaces disponibles
+
+DROP KEYSPACE nom_keyspace ; // supprimer un keyspace 
+
+// créer une table 
+
+USE nom_keyspace ; => cqlsh:nom_keyspace> 
+
+CREATE TABLE demo (
+    id INT PRIMARY KEY,
+    nom TEXT
+);
+
+DESCRIBE TABLES ; // liste des tables disponibles dans un keyspace
+
+DESCRIBE TABLE demo ; // liste des colonnes d'une table ET setting de la table 
+
+ALTER TABLE demo ADD prenom TEXT ; // besoin d'ajouter une nouvelle colonne dans la table demo 
+
+ALTER TABLE demo DROP nom ; // supprimer une colonne 
+
+CREATE COLUMNFAMILY  demo2 ( // TABLE est un synonyme de COLUMNFAMILY
+    id INT PRIMARY KEY,
+    nom TEXT
+);
+
+// SELECT * FROM demo2 ;
+ id nom 
+clé primaire => comme une clé de Partition
+
+INSERT INTO demo2 (id , nom) VALUES (1 , 'Alain')  ;
+
+INSERT INTO demo2 (id , nom) VALUES (2, 'Benoit') ;
+// Attention sur Cassandra il faut utiliser OBLIGATOIREMENT les ' pour délimiter les string et ne pas utiliser les " pour délimiter les string dans l'outil en ligne de commande cqlsh 
+
+SELECT * FROM demo2 WHERE id = 1 ;
+
+SELECT * FROM demo2 WHERE nom = 'Céline' ; // message d'erreur réponse peut être imprésivisble 
+
+SELECT * FROM demo2 WHERE nom = 'Céline' ALLOW FILTERING ; // possible en ajoutant l'option  ALLOW FILTERING dans la requête recherche 
 
